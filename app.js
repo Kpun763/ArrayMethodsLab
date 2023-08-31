@@ -142,14 +142,36 @@ console.log('mexicanFood from filterExample', mexicanFood)
 function problemOne(){
 
     let results;
-
+    results = dishes.filter(function(el){
+        if(el.cuisine === "Vegetarian"){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
     return results;
 }
 
+let vegetarianFood = problemOne();
+console.log('vegetarianFood from problemOne',vegetarianFood)
+
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
-
-
+function problemTwo(){
+    let userCuisineInput = prompt("Please enter your desired cuisine type:");
+    let cuisineType = dishes.filter(function(el){
+        if(el.cuisine.includes(userCuisineInput)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return cuisineType;
+}
+let cuisineType = problemTwo();
+console.log('Here is your desired cuisine',  cuisineType)
 
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
