@@ -214,19 +214,58 @@ console.log("Here are the id's with mathcing serving count", matchingIdAndServin
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
 
-
+function problemFive(){
+    let servingCountIsEven;
+    servingCountIsEven = dishes.filter(function(el){
+        if(el.servings % 2 === 0){
+            return true;
+        }
+        else{
+            return false
+        }
+    })
+    return servingCountIsEven;
+}
+let evenServingCount = problemFive();
+console.log("Here are the id's with even serving counts", evenServingCount)
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
 //Filter
 
-
+function problemSix(){
+    let dishesWithCertainIngredient;
+    dishesWithCertainIngredient = dishes.filter(function(el){
+        if(el.ingredients.includes("chickpea")){
+            return true;
+        }
+        else{
+            return false
+        }
+    })
+    return dishesWithCertainIngredient;
+}
+let specificIngredient = problemSix();
+console.log("Here are the dishes whose ingredients includes chickpea", specificIngredient)
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
-
+function problemSeven(){
+    let userIngredientInput = prompt("Please enter an ingredient name: ");
+    userIngredientInput = dishes.filter(function(el){
+        if(el.ingredients.includes(userIngredientInput)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return userIngredientInput;
+}
+let ingredientSearch = problemSix();
+console.log("Here are the dishes the user specific ingredient", ingredientSearch)
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
