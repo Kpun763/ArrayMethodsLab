@@ -295,11 +295,26 @@ console.log('Array of vegetarian dish names', vegetarianNameArray)
 
 //BONUS
 
-//8b. Use the filter method to eliminate duplicate from problem 8a.
+//8b. Ue the filter method to eliminate duplicate from problem 8a.
 
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+
+function problemEleven(){
+    let dishesWithTomatoOrCheese;
+    dishesWithTomatoOrCheese = dishes.filter(function(el){
+        if(el.ingredients.includes("tomato") || el.ingredients.includes("cheese")){
+            return true;
+        }
+        else{
+            return false
+        }
+    })
+    return dishesWithTomatoOrCheese;
+}
+let specificIngredients = problemEleven();
+console.log("Here are the dishes whose ingredients includes tomato or cheese", specificIngredients)
 
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
