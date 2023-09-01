@@ -264,23 +264,33 @@ function problemSeven(){
     })
     return userIngredientInput;
 }
-let ingredientSearch = problemSix();
+let ingredientSearch = problemSeven();
 console.log("Here are the dishes the user specific ingredient", ingredientSearch)
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
-
-
+function problemEight(dishes){
+    return dishes.map(dish => dish.cuisine);
+}
+let cuisineTypeArray = problemEight(dishes);
+console.log('Aray of cuisine types', cuisineTypeArray)
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
 
-
+function problemNine(dishes){
+    return dishes.map(dish => `${dish.cuisine} ${dish.name}`);
+}
+let cuisineTypeAndDishArray = problemNine(dishes);
+console.log('Array of cuisine and dish names', cuisineTypeAndDishArray)
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
 
-
-
+function problemTen(dishes){
+    return dishes.filter(dish => dish.cuisine === "Vegetarian").map(dish => `${dish.cuisine} ${dish.name}`);
+}
+let vegetarianNameArray = problemTen(dishes);
+console.log('Array of vegetarian dish names', vegetarianNameArray)
 
 
 //BONUS
